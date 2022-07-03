@@ -36,32 +36,32 @@
       },
     ],
   },
-  {
-    name: 'list.table-list',
-    icon: 'table',
-    path: '/list',
-    component: './TableList',
-  },
+  // {
+  //   name: 'list.table-list',
+  //   icon: 'table',
+  //   path: '/list',
+  //   component: './TableList',
+  // },
 
-  {
-    name: 'media',
-    path: '/media',
-    icon: 'file',
-    routes: [
-      {
-        path: '/media/list',
-        name: 'media-table',
-        icon: 'smile',
-        component: './Media/List',
-      },
-      {
-        path: '/media/upload',
-        name: 'media-upload',
-        icon: 'smile',
-        component: './Media/Upload',
-      },
-    ],
-  },
+  // {
+  //   name: 'media',
+  //   path: '/media',
+  //   icon: 'file',
+  //   routes: [
+  //     {
+  //       path: '/media/list',
+  //       name: 'media-table',
+  //       icon: 'smile',
+  //       component: './Media/List',
+  //     },
+  //     {
+  //       path: '/media/upload',
+  //       name: 'media-upload',
+  //       icon: 'smile',
+  //       component: './Media/Upload',
+  //     },
+  //   ],
+  // },
   {
     path: '/',
     redirect: '/welcome',

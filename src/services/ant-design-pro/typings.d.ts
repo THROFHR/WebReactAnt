@@ -1,126 +1,78 @@
 declare namespace API {
+  type CreateUserDto = {
+    /** 用户名 */
+    username: string;
+    /** 密码 */
+    password: string;
+    /** 昵称 */
+    nickname: string;
+    /** 生日 */
+    birthday: string;
+  };
+
   type CurrentUser = {
-    name?: string;
-    avatar?: string;
-    userid?: string;
-    email?: string;
-    signature?: string;
-    title?: string;
-    group?: string;
-    tags?: { key?: string; label?: string }[];
-    notifyCount?: number;
-    unreadCount?: number;
-    country?: string;
-    access?: string;
-    geographic?: {
-      province?: { label?: string; key?: string };
-      city?: { label?: string; key?: string };
-    };
-    address?: string;
-    phone?: string;
-  };
-
-  type ErrorResponse = {
-    /** 业务约定的错误码 */
-    errorCode: string;
-    /** 业务上的错误信息 */
-    errorMessage?: string;
-    /** 业务上的请求是否成功 */
-    success?: boolean;
-  };
-
-  type FakeCaptcha = {
-    code?: number;
-    status?: string;
-  };
-
-  type getFakeCaptchaParams = {
-    /** 手机号 */
-    phone?: string;
+    id: string;
+    username: string;
+    nickname: string;
+    avatar: string;
+    birthday: string;
+    createdAt: string;
+    token: string;
   };
 
   type LoginParams = {
+    /** 用户名 */
+    username: string;
+    /** 密码 */
+    password: string;
+    /** 登陆类型 */
+    type: string;
+    /** 手机号 */
+    phone: string;
+    /** 验证码 */
+    code: string;
+  };
+
+  type ResponseDto = {
+    /** 请求结果状态码 */
+    code: number;
+    /** 请求结果数据 */
+    data: Record<string, any>;
+    /** 业务约定的错误码 */
+    errorCode: string;
+    /** 业务上的错误信息 */
+    errorMessage: string;
+    /** 业务上的请求是否成功 */
+    success: boolean;
+  };
+
+  type UpdateUserDto = {
+    /** 用户名 */
     username?: string;
+    /** 密码 */
     password?: string;
-    autoLogin?: boolean;
-    type?: string;
+    /** 昵称 */
+    nickname?: string;
+    /** 生日 */
+    birthday?: string;
   };
 
-  type LoginResult = {
-    status?: string;
-    type?: string;
-    currentAuthority?: string;
-  };
-
-  type FileGroup = {
-    id: number;
-    name: string;
-  };
-
-  // 文件列表
-  type MediaListItem = {
-    fileKey: string;
-    fileName: string;
-    fileSize: number;
-    fileType: string;
-    fileGroupId: number;
-    updatedAt?: string;
+  type UserDto = {
+    id: string;
+    username: string;
+    nickname: string;
+    avatar: string;
+    birthday: string;
     createdAt: string;
   };
 
-  type NoticeIconItem = {
-    id?: string;
-    extra?: string;
-    key?: string;
-    read?: boolean;
-    avatar?: string;
-    title?: string;
-    status?: string;
-    datetime?: string;
-    description?: string;
-    type?: NoticeIconItemType;
-  };
-
-  type NoticeIconItemType = 'notification' | 'message' | 'event';
-
-  type NoticeIconList = {
-    data?: NoticeIconItem[];
-    /** 列表的内容总数 */
-    total?: number;
-    success?: boolean;
-  };
-
-  type PageParams = {
-    current?: number;
-    pageSize?: number;
-  };
-
-  type RuleList = {
-    data?: RuleListItem[];
-    /** 列表的内容总数 */
-    total?: number;
-    success?: boolean;
-  };
-
-  type RuleListItem = {
-    key?: number;
-    disabled?: boolean;
-    href?: string;
-    avatar?: string;
-    name?: string;
-    owner?: string;
-    desc?: string;
-    callNo?: number;
-    status?: number;
-    updatedAt?: string;
-    createdAt?: string;
-    progress?: number;
-  };
-
-  type ruleParams = {
-    /** 当前的页码 */
-    current?: number;
-    /** 页面的容量 */
-    pageSize?: number;
+  type UserLoginResponseDto = {
+    id: string;
+    username: string;
+    nickname: string;
+    avatar: string;
+    birthday: string;
+    createdAt: string;
+    token: string;
   };
 }
